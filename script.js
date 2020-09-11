@@ -14,6 +14,15 @@ var promptNumbers;
 var promptLowerCase;
 var promptUpperCase;
 
+// Prompt for user to confirm how many characters they want in there password
+function generatePassword(){
+  var passwordLength = (prompt("How many characters would you like your password to contain"))
+
+  // While loop to check if user input meets minimum criteria
+  while (passwordLength < 8 || passwordLength > 128){
+    alert ("Password length must be between 8-128 characters");
+    var passwordLength = (prompt("How many characters would you like your password to contain"));
+  }
 
 
 
@@ -22,18 +31,7 @@ var promptUpperCase;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+}
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
