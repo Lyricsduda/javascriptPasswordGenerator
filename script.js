@@ -39,7 +39,24 @@ function generatePassword() {
     var promptUpperCase = confirm("Click OK to confirm including uppercase characters.");
   }
 
+    // if statement's to create a array to pass to the loop to generate the password
+    var passwordChar = []
 
+   if (promptSpecialChar){
+     passwordChar = passwordChar.concat(specialChar)
+   }
+
+   if (promptNumbers) {
+    passwordChar = passwordChar.concat(numbers)
+   }
+
+   if (promptLowerCase) {
+    passwordChar = passwordChar.concat(lowerCase)
+   }
+
+   if (promptLowerCase) {
+    passwordChar = passwordChar.concat(upperCase)
+   }
 
 
 
