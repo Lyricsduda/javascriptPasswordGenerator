@@ -15,13 +15,28 @@ var promptLowerCase;
 var promptUpperCase;
 
 // Prompt for user to confirm how many characters they want in there password
-function generatePassword(){
+function generatePassword() {
   var passwordLength = (prompt("How many characters would you like your password to contain"))
 
   // While loop to check if user input meets minimum criteria
-  while (passwordLength < 8 || passwordLength > 128){
-    alert ("Password length must be between 8-128 characters");
+  while (passwordLength < 8 || passwordLength > 128) {
+    alert("Password length must be between 8-128 characters");
     var passwordLength = (prompt("How many characters would you like your password to contain"));
+  }
+
+  // Variables for password additional criteria
+  var promptSpecialChar = confirm("Click OK to confirm including special characters.");
+  var promptNumbers = confirm("Click OK to confirm including numeric character.");
+  var promptLowerCase = confirm("Click OK to confirm including lowercase characters.");
+  var promptUpperCase = confirm("Click OK to confirm including uppercase characters.");
+
+  // While loop to check if user selected at least one piece of critera
+  while (promptSpecialChar === false && promptNumbers === false && promptLowerCase === false && promptUpperCase === false) {
+    alert("Must select at least one character type")
+    var promptSpecialChar = confirm("Click OK to confirm including special characters.");
+    var promptNumbers = confirm("Click OK to confirm including numeric character.");
+    var promptLowerCase = confirm("Click OK to confirm including lowercase characters.");
+    var promptUpperCase = confirm("Click OK to confirm including uppercase characters.");
   }
 
 
