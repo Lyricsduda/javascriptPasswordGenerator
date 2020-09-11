@@ -1,5 +1,38 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+// Code for when the button is pushed, it prompts the user for the password generation criteria. 
+document.querySelector("#generate").addEventListener("click", writePassword);
+
+// Arrays for generating password.
+var passwordNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var passwordSpecialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"]
+var passwordLowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var passwordUpperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+//Declared variable's for the functions.
+var passwordLength = "";
+var promptSpecialChar;
+var promptNumbers;
+var promptLowerCase;
+var promptUpperCase;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Write password to the #password input
 function writePassword() {
@@ -9,6 +42,3 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
