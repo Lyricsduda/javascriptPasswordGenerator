@@ -7,21 +7,21 @@ var passwordSpecialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ","
 var passwordLowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var passwordUpperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-//Declared variable's for the functions.
+//Declared variable's for the function.
 var passwordLength = "";
 var promptSpecialChar;
 var promptNumbers;
 var promptLowerCase;
 var promptUpperCase;
 
-// Prompt for user to confirm how many characters they want in there password
+// Prompt for user to confirm how many characters they want in their password
 function generatePassword() {
-  var passwordLength = (prompt("How many characters would you like your password to contain"))
+  var passwordLength = (prompt("How many characters would you like your password to contain."))
 
   // While loop to check if user input meets minimum criteria
   while (passwordLength < 8 || passwordLength > 128) {
-    alert("Password length must be between 8-128 characters");
-    var passwordLength = (prompt("How many characters would you like your password to contain"));
+    alert("Password length must be between 8-128 characters.");
+    var passwordLength = (prompt("How many characters would you like your password to contain."));
   }
 
   // Variables for password additional criteria
