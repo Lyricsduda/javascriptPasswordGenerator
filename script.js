@@ -3,7 +3,7 @@ document.querySelector("#generate").addEventListener("click", writePassword);
 
 // Arrays for generating password.
 var passwordNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var passwordSpecialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"]
+var passwordSpecialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 var passwordLowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var passwordUpperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
@@ -39,28 +39,35 @@ function generatePassword() {
     var promptUpperCase = confirm("Click OK to confirm including uppercase characters.");
   }
 
-    // if statement's to create a array to pass to the loop to generate the password
-    var passwordChar = []
+  // if statement's to create a array of what additional character types the user wishes to have in there password
+  var passwordChar = []
 
-   if (promptSpecialChar){
-     passwordChar = passwordChar.concat(specialChar)
-   }
+  if (promptSpecialChar) {
+    passwordChar = passwordChar.concat(passwordSpecialChar)
+  }
 
-   if (promptNumbers) {
-    passwordChar = passwordChar.concat(numbers)
-   }
+  if (promptNumbers) {
+    passwordChar = passwordChar.concat(passwordNumbers)
+  }
 
-   if (promptLowerCase) {
-    passwordChar = passwordChar.concat(lowerCase)
-   }
+  if (promptLowerCase) {
+    passwordChar = passwordChar.concat(passwordLowerCase)
+  }
 
-   if (promptLowerCase) {
-    passwordChar = passwordChar.concat(upperCase)
-   }
-
-
+  if (promptUpperCase) {
+    passwordChar = passwordChar.concat(passwordUpperCase)
+  }
 
 
+  //Empty variable to be filled based on the password generated from the for loop
+  var passwordGenerate = ""
+
+  //For loop to generate a password thought random numbers and special characters from the array
+  for (var i = 0; i < passwordLength; i++) {
+    passwordGenerate = passwordGenerate + passwordChar[Math.floor(Math.random() * passwordChar.length)];
+
+  }
+  return passwordGenerate;
 
 
 }
